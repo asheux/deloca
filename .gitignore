@@ -1,0 +1,10 @@
+# Vim stuff
+*.swo
+*.swp
+*.swn
+
+# py
+__pycache__/
+
+# Environments
+venv/
