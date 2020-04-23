@@ -10,3 +10,8 @@ solution. The whole idea behind 2-opt is to take an initial route that crosses o
 improve it using local search until it reaches a local optimum and no more improvements can be made 
 (improvement is done through reordering or swapping). 
 
+### Run
+
+```
+$ python run.py
+```
