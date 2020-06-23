@@ -1,4 +1,5 @@
 import datetime
+from typing import Dict
 from read_csv import read_file
 
 
@@ -11,7 +12,7 @@ class TwoOptimal:
             X         ==>     
         - C   D -             - C - D -
     """
-    best_route = {}
+    best_route: Dict[str, Dict[str, str]] = {}
 
     def __init__(self, matrix):
         self.coords = matrix
@@ -109,7 +110,7 @@ class TwoOptimal:
 
         return new_route
 
-    def find_best_path(self, current_tour: list) -> list:
+    def find_best_path(self, current_tour: list):
         """
         This is the heuristic algorithm (2-opt); it gradually improve an, 
         initially given, feasible answer (local search) until it reaches a 
@@ -133,7 +134,7 @@ class TwoOptimal:
                     gain -= self.distance(i, k) + self.distance(j, l)
 
                     if gain < change:
-                        change = gain
+                        change = int(gain)
                         a, b = (n, m)
             if change < 0:
                 tour = self.swap(tour, a + 1, b)  # swap the points

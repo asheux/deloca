@@ -1,4 +1,5 @@
 import datetime
+from typing import List, Dict
 from read_csv import read_file
 from two_opt import TwoOptimal
 from hashmap import HashTable
@@ -7,9 +8,9 @@ ht = HashTable()  # instantiate a hash table
 
 
 class ProcessData:
-    s_trip = []
-    s_truck = []
-    f_truck = []
+    s_trip: List = []
+    s_truck: List = []
+    f_truck: List = []
 
     def __init__(self):
         self.packages = read_file('data/package_data.csv')
@@ -58,8 +59,8 @@ class ProcessData:
 
 
 class VehicleRouting(ProcessData):
-    time_data = []
-    tour_info = {}
+    time_data: List = []
+    tour_info: Dict = {}
 
     def __init__(self):
         super().__init__()
@@ -111,13 +112,13 @@ class VehicleRouting(ProcessData):
         self.set_tour_info(tour)
         self.time_data[:] = []  # empty the list of the next truck
 
-    def total_time(self, path: dict, i: int) -> datetime.timedelta():
+    def total_time(self, path: Dict, i: int):
         """
         calculate time for each delivery
 
         Paramaters
         ----------
-        path, i; dict, int
+        path, i; Dict, int
             path is the best route
             i is the index
         """
