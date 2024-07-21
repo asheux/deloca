@@ -3,6 +3,8 @@
 *.swp
 *.swn
 
+.DS_Store
+
 # py
 __pycache__/
 
